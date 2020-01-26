@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>User Operations</title>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <style>
+        #workspace {
+            width: 730px;
+        }
+
+        body {
+            font-style: normal;
+            font-variant: normal;
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+
+        #leftSideSection {
+            float: left;
+            margin-left: 1px;
+            min-height: 200px;
+            min-width: 600px;
+            /* border to check block area */
+            /* border: solid 1px #1E90FF; */
+        }
+
+        #rightSideSection {
+            width: 90px;
+            float: right;
+            /* border to check block area */
+            /* border: solid 1px orange; */
+        }
+
+        #infoSection {
+            height: 30px;
+            margin-bottom: 5px;
+            /* border to check block area */
+            /* border: solid 1px aquamarine; */
+        }
+
+        #userInputFields td input {
+            width: 200px;
+            border: solid 1px #cccccc;
+            border-radius: 3px;
+        }
+
+        #actionButtons {
+            margin-top: 20px;
+            /* margins (auto) aligns buttons in center */
+            margin-left: auto;
+            margin-right: auto;
+            /* width keeps buttons vertically */
+            width: 90px;
+            /* border to check block area */
+            /* border: solid 1px mediumslateblue; */
+        }
+
+        #actionButtons input {
+            border: solid 1px #cccccc;
+            border-radius: 3px;
+            height: 25px;
+            width: 90px;
+            cursor: pointer;
+            /* space between buttons */
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>User Operations</h1>
+<div id="workspace">
+    <div id="infoSection"></div>
+    <div id="leftSideSection">
+        <table id="storeUser">
+            <thead>
+            <tr id="columns">
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Age</td>
+            </tr>
+            <tr id="userInputFields">
+                <td><input id="name" type="text"/></td>
+                <td><input id="surname" type="text"/></td>
+                <td><input id="age" type="text"/></td>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br/>
+        <div id="dataHolder"></div>
+    </div>
+    <div id="rightSideSection">
+        <div id="actionButtons">
+            <input type="button" id="storeUserButton" value="Store user">
+            <input type="button" id="usersDataButton" value="Users data">
+        </div>
+    </div>
+</div>
+<script type="application/javascript">
+    "use strict";
+
+    const userStoreUrl = '/userStore';
+    const allUsersDataUrl = '/usersData';
+
+    let stompClient = null;
+
+    $(function () {
+        $("#storeUserButton").click(storeUser);
+        $("#usersDataButton").click(usersData);
+        webSocketConnect();
+    });
+
+    const storeUser = () => {
+        let name = $("#name").val();
+        let surname = $("#surname").val();
+        let age = $("#age").val();
+
+        if(!Number.isInteger(parseInt(age, 10))) {
+            showInfoMessage("Invalid value for age: " + age);
+            return;
+        }
+
+        sendUser({ name: name, surname: surname, age: age });
+    }
+
+    function showInfoMessage(message) {
+        let p = document.createElement("p")
+        p.textContent = message;
+        let info = document.getElementById("infoSection");
+        info.innerHTML = "";
+        info.appendChild(p);
+    }
+
+    function sendUser(user) {
+        stompClient.send('/app/userStore', {}, JSON.stringify({'infoContent': '', 'usersDataContent': JSON.stringify(user)}));
+    }
+
+    const usersData = () => {
+        stompClient.send('/app/usersData', {}, '');
+    }
+
+    function webSocketConnect() {
+        if (stompClient == null) {
+            stompClient = Stomp.over(new SockJS('/users-data-websocket'));
+            stompClient.connect({}, (frame) => {
+                console.log('Connected: ' + frame);
+
+                stompClient.subscribe('/infoMessage/response', (message) => {
+                    let info = JSON.parse(message.body).infoContent;
+                    console.log('infoContent from server: ' + info);
+                    showInfoMessage(info);
+                });
+
+                stompClient.subscribe('/usersDataContent/response', (message) => {
+                    let content = JSON.parse(message.body).usersDataContent;
+                    console.log('usersDataContent from server: ' + content);
+                    showUsersData(JSON.parse(content));
+                });
+            });
+        }
+    }
+
+    function showUsersData(dataSrv) {
+        let table = document.createElement("table");
+        let head = document.createElement("thead");
+        let columns = document.createElement("tr");
+
+        let nameColumn = document.createElement("td");
+        nameColumn.textContent = "Name";
+
+        let surnameColumn = document.createElement("td");
+        surnameColumn.textContent = "Surname";
+
+        let ageColumn = document.createElement("td");
+        ageColumn.textContent = "Age";
+
+        let body = document.createElement("tbody");
+        for (let user of dataSrv) {
+             let row = document.createElement("tr");
+             let nameData = document.createElement("td");
+             nameData.textContent = user.name;
+             let surnameData = document.createElement("td");
+             surnameData.textContent = user.surname;
+             let ageData = document.createElement("td");
+             ageData.textContent = user.age;
+             row.appendChild(nameData);
+             row.appendChild(surnameData);
+             row.appendChild(ageData);
+             body.appendChild(row);
+        }
+
+        columns.appendChild(nameColumn);
+        columns.appendChild(surnameColumn);
+        columns.appendChild(ageColumn);
+
+        head.appendChild(columns);
+        table.appendChild(head);
+        table.appendChild(body);
+        const holder = document.getElementById("dataHolder");
+        holder.innerHTML = "";
+        holder.appendChild(table);
+    }
+</script>
+</body>
+</html>
