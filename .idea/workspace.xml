@@ -1,54 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="067a09ed-f516-44fb-9a65-f1616c886e81" name="Default Changelist" comment="multiprocess">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2/h2.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2/h2.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2/h2w.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/DBServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/DBStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/DBUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/handlers/GetAllUsersRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/handlers/StoreUserRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/service/DBService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/database/service/DBServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/FrontendConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/FrontendServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/FrontendStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/controllers/UserStoreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/controllers/UsersDataController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/controllers/WSMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/handlers/GetAllUsersResponseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/handlers/StoreUserResponseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/service/FrontendService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/frontend/service/FrontendServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/message_system/MessageConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/message_system/MessageConsumerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/message_system/MessageSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/message_system/MessageSystemImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/message_system/MsServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/message_system/MsStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/ClientType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/MessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/MessageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/MsClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/MsClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/common/Serializers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/otus/homework/ms_client/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userOperations.html" afterDir="false" />
+    <list default="true" id="067a09ed-f516-44fb-9a65-f1616c886e81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OtusHW" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -115,6 +69,14 @@
       <option name="presentableId" value="Default" />
       <updated>1579717782248</updated>
     </task>
+    <task id="LOCAL-00001" summary="multiprocess">
+      <created>1580027918548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580027918548</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -130,14 +92,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="449" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1579718804782" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1580027237155">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1580027915512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580027237155" />
-    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1580026908451">
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580027915512" />
+    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1580145842153">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580026908451" />
+    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580145842153" />
     <state x="539" y="256" key="Github.ShareDialog" timestamp="1580026935177">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -150,13 +112,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580027629539" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1580027161981">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1580027924966">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580027161981" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1579804679697">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580027924966" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1580066462020">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579804679697" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580066462020" />
   </component>
 </project>
